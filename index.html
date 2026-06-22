@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">◈</span>
+          <span class="logo-text">Nexus AI</span>
+        </div>
+        <p class="tagline">Your intelligent companion</p>
+      </div>
+
+      <nav class="mode-nav">
+        <p class="nav-label">Mode</p>
+        <button class="mode-btn active" data-mode="auto">
+          <span class="mode-icon">⚡</span>
+          <div>
+            <div class="mode-name">Auto</div>
+            <div class="mode-desc">Let AI decide</div>
+          </div>
+        </button>
+        <button class="mode-btn" data-mode="factual">
+          <span class="mode-icon">🔍</span>
+          <div>
+            <div class="mode-name">Factual</div>
+            <div class="mode-desc">Precise answers</div>
+          </div>
+        </button>
+        <button class="mode-btn" data-mode="summarize">
+          <span class="mode-icon">📄</span>
+          <div>
+            <div class="mode-name">Summarize</div>
+            <div class="mode-desc">Condense text</div>
+          </div>
+        </button>
+        <button class="mode-btn" data-mode="creative">
+          <span class="mode-icon">✦</span>
+          <div>
+            <div class="mode-name">Creative</div>
+            <div class="mode-desc">Stories & poems</div>
+          </div>
+        </button>
+        <button class="mode-btn" data-mode="advice">
+          <span class="mode-icon">💡</span>
+          <div>
+            <div class="mode-name">Advice</div>
+            <div class="mode-desc">Tips & guidance</div>
+          </div>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="clearBtn" class="clear-btn">↺ Clear chat</button>
+      </div>
+    </aside>
+
+    <!-- Main chat area -->
+    <main class="chat-area">
+      <div class="chat-topbar">
+        <span id="activeModeBadge" class="mode-badge">⚡ Auto Mode</span>
+        <span class="status-dot"></span>
+      </div>
+
+      <div id="chatMessages" class="chat-messages">
+        <div class="welcome-block">
+          <h1 class="welcome-title">What can I help with?</h1>
+          <p class="welcome-sub">Ask me anything — factual questions, summaries, creative writing, or advice.</p>
+          <div class="suggestions">
+            <button class="suggestion-chip" data-text="What is the capital of France?">🌍 Capital of France?</button>
+            <button class="suggestion-chip" data-text="Write a short poem about the ocean.">✦ Poem about the ocean</button>
+            <button class="suggestion-chip" data-text="Give me tips for studying effectively.">💡 Study tips</button>
+            <button class="suggestion-chip" data-text="Summarize: Artificial intelligence is transforming industries by automating tasks, improving decision-making, and enabling new capabilities that were previously impossible. From healthcare to finance, AI is reshaping how we work and live.">📄 Summarize a text</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <div class="input-wrapper">
+          <textarea
+            id="userInput"
+            placeholder="Ask a question, paste text to summarize, request a story…"
+            rows="1"
+          ></textarea>
+          <button id="sendBtn" class="send-btn" aria-label="Send">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3 10L17 10M17 10L11 4M17 10L11 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">Press <kbd>Enter</kbd> to send · <kbd>Shift+Enter</kbd> for new line</p>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
